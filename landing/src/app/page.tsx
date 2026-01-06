@@ -1,64 +1,48 @@
-import Image from "next/image";
+import Examples from "@/components/landing/Examples";
+import Algorithms from "@/components/landing/Algorithms";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white dark:bg-zinc-950 dark:text-zinc-50">
+      <main className="mx-auto max-w-4xl px-6 py-24 sm:py-32">
+        <header className="mb-24">
+          <h1 className="mb-8 text-5xl font-bold tracking-tight sm:text-7xl">
+            Chance
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg leading-relaxed text-zinc-500 dark:text-zinc-500">
+            Human is a procedural machine. But without a specification of procedures, we are simply drifting in a chaos of random impulses.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </header>
+
+        <section className="mb-24 space-y-12">
+          <div className="grid gap-12 sm:grid-cols-2">
+            <div>
+              <h2 className="mb-4 text-2xl font-bold">Our Goal</h2>
+              <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
+                Formalize the procedures of life. Decompose them into atomic actions. Identify the gaps where awareness is replaced by automatism.
+              </p>
+            </div>
+            <div>
+              <h2 className="mb-4 text-2xl font-bold">Mathematical Foundation</h2>
+              <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
+                We use graph theory and procedural decomposition to transform uncertainty into a deterministic path.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <Examples />
+        
+        <Algorithms />
+
+        <section className="rounded-2xl bg-zinc-50 p-8 dark:bg-zinc-900 sm:p-12">
+          <h2 className="mb-6 text-3xl font-bold">Concept</h2>
+          <div className="prose prose-zinc dark:prose-invert max-w-none">
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 italic">
+              "If a goal is not decomposed into procedures that can be physically performed daily (with a timeline) — it is not a goal, but a hallucination."
+            </p>
+          </div>
+        </section>
       </main>
     </div>
   );
