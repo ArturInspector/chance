@@ -1,53 +1,92 @@
 import Examples from "@/components/landing/Examples";
 import Algorithms from "@/components/landing/Algorithms";
+import DependencyGraph from "@/components/landing/DependencyGraph";
+import MathFoundations from "@/components/landing/MathFoundations";
+import UserProcedure from "@/components/landing/UserProcedure";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white dark:bg-zinc-950 dark:text-zinc-50">
-      <main className="mx-auto max-w-4xl px-6 py-24 sm:py-32">
-        <header className="mb-24">
-          <h1 className="mb-8 text-5xl font-bold tracking-tight sm:text-7xl">
-            Chance
-          </h1>
-          <p className="text-lg leading-relaxed text-zinc-500 dark:text-zinc-500">
-            Human is a procedural machine. But without a specification of procedures, "we are not machines". But what if - we are?
-          </p>
+    <div className="min-h-screen bg-white text-zinc-900 selection:bg-black selection:text-white dark:bg-black dark:text-zinc-50">
+      <main className="mx-auto max-w-5xl border-x border-zinc-200 dark:border-zinc-800">
+        
+        <header className="border-b border-zinc-200 p-6 sm:p-12 dark:border-zinc-800 flex justify-between items-start">
+          <div>
+            <h1 className="mb-8 text-2xl font-bold tracking-tight lowercase">
+              chance
+            </h1>
+            
+            <div className="max-w-xl space-y-6">
+              <p className="text-xl leading-relaxed">
+                We are procedural machines. <br/>
+                Every small action is a function call.
+              </p>
+              <p className="text-lg opacity-60 leading-relaxed">
+                We drift when we don't define the procedure. <br/>
+                We build when we decompose the chaos into atomic steps.
+              </p>
+            </div>
+          </div>
+
+          <a 
+            href="https://github.com/ArturInspector/chance" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center gap-2 text-xs opacity-50 hover:opacity-100 transition-opacity"
+          >
+            <span>source_code</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 4 2c-1.5-.5-3 .5-3 1.5 0 1.15 0 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+              <path d="M9 18c-4.51 2-5-2-7-2"/>
+            </svg>
+          </a>
         </header>
 
-        <section className="mb-24 space-y-12">
-          <div className="grid gap-12 sm:grid-cols-2">
-            <div>
-              <h2 className="mb-4 text-2xl font-bold">Our Goal</h2>
-              <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
-                Formalize the procedures of life. Decompose them into atomic actions. Identify the gaps where awareness is replaced by automatism.
-              </p>
-            </div>
-            <div>
-              <h2 className="mb-4 text-2xl font-bold">Mathematical Foundation</h2>
-              <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
-                We use graph theory and procedural decomposition to transform uncertainty into a deterministic path.
-              </p>
-            </div>
+        <section className="grid sm:grid-cols-2 border-b border-zinc-200 dark:border-zinc-800">
+          <div className="border-b sm:border-b-0 sm:border-r border-zinc-200 p-6 sm:p-12 dark:border-zinc-800">
+            <p className="text-lg mb-2">The Problem</p>
+            <p className="text-sm opacity-60 leading-relaxed">
+              We try to solve life with huge, undefined goals. "Be happy", "Get rich". These are not procedures. These are hallucinations.
+            </p>
+          </div>
+          <div className="p-6 sm:p-12">
+            <p className="text-lg mb-2">The Method</p>
+            <p className="text-sm opacity-60 leading-relaxed">
+              Decompose. Break it down until it's atomic. Until you can do it in 5 minutes without thinking. Then compose it back.
+            </p>
           </div>
         </section>
 
-        <Examples />
-        
-        <Algorithms />
+        <UserProcedure />
 
-        <section className="rounded-2xl bg-zinc-50 p-8 dark:bg-zinc-900 sm:p-12">
-          <h2 className="mb-6 text-3xl font-bold">Concept</h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none space-y-4">
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 italic">
-              "If a goal is not decomposed into procedures that can be physically performed daily (with a timeline) — it is not a goal, but a hallucination."
-            </p>
-            <p className="text-zinc-700 dark:text-zinc-300">
-              Trello gives us a task manager. But does it ever ask: <span className="font-semibold">Why</span> do you want this task? <span className="font-semibold">What</span> is this really for? Aren't these the fundamental questions?
-            </p>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              We aim to design not just for action, but for meaning—tracing tasks back to their purpose, not merely automating the "how", but elevating the "why" and "what".
-            </p>
+        <div className="border-b border-zinc-200 dark:border-zinc-800">
+          <Examples />
+        </div>
+        
+        <div className="border-b border-zinc-200 dark:border-zinc-800">
+          <Algorithms />
+        </div>
+
+        <div className="border-b border-zinc-200 dark:border-zinc-800">
+          <MathFoundations />
+        </div>
+
+        <div className="border-b border-zinc-200 dark:border-zinc-800">
+          <DependencyGraph />
+        </div>
+
+        <section className="p-6 sm:p-12 flex justify-between items-end">
+          <div className="max-w-lg text-sm opacity-50">
+            "Everything small is not actually small. It is a necessary component of the whole."
           </div>
+          
+          <a 
+            href="https://github.com/ArturInspector/chance" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex sm:hidden items-center gap-2 text-xs opacity-50 hover:opacity-100 transition-opacity"
+          >
+            <span>github</span>
+          </a>
         </section>
       </main>
     </div>
