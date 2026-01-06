@@ -10,7 +10,7 @@ export default function Home() {
             Chance
           </h1>
           <p className="text-lg leading-relaxed text-zinc-500 dark:text-zinc-500">
-            Human is a procedural machine. But without a specification of procedures, we are simply drifting in a chaos of random impulses.
+            Human is a procedural machine. But without a specification of procedures, "we are not machines". But what if - we are?
           </p>
         </header>
 
@@ -37,9 +37,15 @@ export default function Home() {
 
         <section className="rounded-2xl bg-zinc-50 p-8 dark:bg-zinc-900 sm:p-12">
           <h2 className="mb-6 text-3xl font-bold">Concept</h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
+          <div className="prose prose-zinc dark:prose-invert max-w-none space-y-4">
             <p className="text-lg text-zinc-600 dark:text-zinc-400 italic">
               "If a goal is not decomposed into procedures that can be physically performed daily (with a timeline) — it is not a goal, but a hallucination."
+            </p>
+            <p className="text-zinc-700 dark:text-zinc-300">
+              Trello gives us a task manager. But does it ever ask: <span className="font-semibold">Why</span> do you want this task? <span className="font-semibold">What</span> is this really for? Aren't these the fundamental questions?
+            </p>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              We aim to design not just for action, but for meaning—tracing tasks back to their purpose, not merely automating the "how", but elevating the "why" and "what".
             </p>
           </div>
         </section>
