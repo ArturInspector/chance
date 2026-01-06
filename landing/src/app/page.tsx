@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Examples from "@/components/landing/Examples";
 import Algorithms from "@/components/landing/Algorithms";
 import DependencyGraph from "@/components/landing/DependencyGraph";
@@ -11,9 +12,12 @@ export default function Home() {
         
         <header className="border-b border-zinc-200 p-6 sm:p-12 dark:border-zinc-800 flex justify-between items-start">
           <div>
-            <h1 className="mb-8 text-2xl font-bold tracking-tight lowercase">
-              chance
-            </h1>
+            <div className="mb-8 flex items-center gap-4">
+              <Image src="/logo.svg" alt="Chance Logo" width={32} height={32} className="rounded-none" />
+              <h1 className="text-2xl font-bold tracking-tight lowercase font-mono">
+                (chance)
+              </h1>
+            </div>
             
             <div className="max-w-xl space-y-6">
               <p className="text-xl leading-relaxed">
