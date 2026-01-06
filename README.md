@@ -1,11 +1,12 @@
-# Chance
+Chance
 
-**System for what?**
+**System for execution.**
+Human goals are not aspirations.
+They are procedures.
 
-This project explores a hypothesis: **Human goals are not vague aspirations but state transitions in a dependency graph.** The failure to achieve them is usually not due to "lack of motivation" but due to **incorrect procedural decomposition**.
-If a goal can be decomposed into atomic, controllable steps, and those steps are executed, the result is mathematically inevitable.
+When a goal is decomposed into executable steps,
+the result follows.
 
-That's enough.
 ## chance-rosy.vercel.app
 
 ## Core Philosophy
@@ -54,10 +55,10 @@ Then:
 *Executing the procedure inevitably leads to the goal.*
 ## Documentation
 
-- [Mathematical Formalization](docs-ru/core/math.md) - Core theory and formal definitions
-- [Dependency Measure](docs-ru/core/dependency-measure.md) - How to measure goal dependencies
-- [Parasitic Goals](docs-ru/core/parasitic-goals.md) - Identifying resource-draining procedures
-- [Axioms](docs-ru/core/axioms.md) - Foundational principles
+- [Mathematical Formalization](docs/core/math.md) - Core theory and formal definitions
+- [Dependency Measure](docs/core/dependency-measure.md) - How to measure goal dependencies
+- [Parasitic Goals](docs/core/parasitic-goals.md) - Identifying resource-draining procedures
+- [Axioms](docs/core/axioms.md) - Foundational principles
 
 ---
 *There are no gods. Only procedures?*
