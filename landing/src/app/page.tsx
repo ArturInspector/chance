@@ -4,6 +4,7 @@ import Algorithms from "@/components/landing/Algorithms";
 import DependencyGraph from "@/components/landing/DependencyGraph";
 import MathFoundations from "@/components/landing/MathFoundations";
 import UserProcedure from "@/components/landing/UserProcedure";
+import GoalInput from "@/components/landing/GoalInput";
 
 export default function Home() {
   return (
@@ -44,6 +45,8 @@ export default function Home() {
             </svg>
           </a>
         </header>
+
+        <GoalInput />
 
         <section className="grid sm:grid-cols-2 border-b border-zinc-200 dark:border-zinc-800">
           <div className="border-b sm:border-b-0 sm:border-r border-zinc-200 p-6 sm:p-12 dark:border-zinc-800">
