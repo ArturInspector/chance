@@ -16,13 +16,6 @@ export default function Canvas() {
     description: '',
     observable_return: '',
     external_verification: null,
-    time_horizon_days: 0,
-    reversibility: false,
-    resource_constraints: {
-      time: 0,
-      energy: 0,
-      attention: 0,
-    },
   });
 
   const [validationState, setValidationState] = useState<GoalValidationState>(
@@ -40,7 +33,8 @@ export default function Canvas() {
 
   const getFieldError = (fieldName: string): string | undefined => {
     if (validationState.status === 'ambiguous' || validationState.status === 'rejected') {
-      return validationState.reasons.find((r: string) => r.includes(fieldName));
+      return validationState.reasons.find((r: string) => r.startsWith(`${fieldName}:`)) ??
+        validationState.reasons.find((r: string) => r.includes(`${fieldName}.`));
     }
     return undefined;
   };
@@ -48,10 +42,12 @@ export default function Canvas() {
   const hasFieldError = (fieldName: string): boolean => {
     if (validationState.status === 'ambiguous') {
       return validationState.missing.includes(fieldName) || 
-             validationState.reasons.some((r: string) => r.includes(fieldName));
+             validationState.reasons.some((r: string) => r.startsWith(`${fieldName}:`)) ||
+             validationState.reasons.some((r: string) => r.includes(`${fieldName}.`));
     }
     if (validationState.status === 'rejected') {
-      return validationState.reasons.some((r: string) => r.includes(fieldName));
+      return validationState.reasons.some((r: string) => r.startsWith(`${fieldName}:`)) ||
+        validationState.reasons.some((r: string) => r.includes(`${fieldName}.`));
     }
     return false;
   };
@@ -90,7 +86,7 @@ export default function Canvas() {
           />
 
           <ReversibilityBlock
-            value={goal.reversibility ?? false}
+            value={goal.reversibility}
             onChange={(value) => updateGoal({ reversibility: value })}
             hasError={hasFieldError('reversibility')}
           />

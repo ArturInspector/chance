@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 interface ReversibilityBlockProps {
-  value: boolean;
+  value: boolean | undefined;
   onChange: (value: boolean) => void;
   hasError: boolean;
 }
@@ -16,7 +16,7 @@ export default function ReversibilityBlock({ value, onChange, hasError }: Revers
       <label className="block text-lg font-semibold">Reversibility</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          Can the effects of this goal be reversed? Some goals create permanent changes, while others can be undone.
+          If it fails or you change your mind, can you return to the previous state without lasting damage?
         </p>
       )}
       <div className="flex gap-4">
@@ -46,7 +46,7 @@ export default function ReversibilityBlock({ value, onChange, hasError }: Revers
         </label>
       </div>
       {hasError && (
-        <p className="text-sm text-red-600">Reversibility must be specified</p>
+        <p className="text-sm text-red-600">Pick one: reversible or irreversible</p>
       )}
     </div>
   );
