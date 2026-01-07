@@ -28,13 +28,13 @@ todos:
       - design-system
   - id: editable-blocks
     content: Create all editable block components (Intention, Observable, etc.)
-    status: pending
+    status: completed
     dependencies:
       - canvas-component
       - validation-logic
   - id: validation-sidebar
     content: Build ValidationSidebar component for status display
-    status: pending
+    status: completed
     dependencies:
       - validation-logic
       - design-system
@@ -286,4 +286,3 @@ Keep deliberation logic isolated:
 4. **Canvas**: Build main container and state management
 5. **Blocks**: Create each editable block component
 6. **Sidebar**: Build validation status display
-7. **Styling**: Apply black & white design system
