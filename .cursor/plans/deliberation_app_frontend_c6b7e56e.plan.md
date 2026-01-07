@@ -12,17 +12,17 @@ todos:
       - setup-nextjs
   - id: shared-types
     content: Define Goal and validation types in shared/types/
-    status: pending
+    status: completed
     dependencies:
       - setup-nextjs
   - id: validation-logic
     content: Implement goal validation utilities in shared/utils/
-    status: pending
+    status: completed
     dependencies:
       - shared-types
   - id: canvas-component
     content: Build main Canvas component with state management
-    status: pending
+    status: completed
     dependencies:
       - shared-types
       - design-system
@@ -287,6 +287,3 @@ Keep deliberation logic isolated:
 5. **Blocks**: Create each editable block component
 6. **Sidebar**: Build validation status display
 7. **Styling**: Apply black & white design system
-8. **Polish**: Refine prompts, explanations, error messages
-
----
