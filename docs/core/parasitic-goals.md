@@ -619,3 +619,4 @@ Therefore:
 - **measurable(G)** — goal measurability
 
 
+

@@ -304,3 +304,4 @@ Without goal clarity, there is no plan. Without plan, there is no progress.
 - `docs/problems/plan-correctness-problem.md` — why plan requires clarity
 
 
+

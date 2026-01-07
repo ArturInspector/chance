@@ -1,7 +1,4 @@
-# Microservice - Prediction
-**Status**: MVP concept  
-**Goal**: Show where current executable procedures lead in foreseeable future
-
+# NOT NOW, SECOND PRODUCT. CURRENT DOC - trash.
 ---
 
 ## Essence
@@ -241,5 +238,6 @@ Not magic. Not guarantee. Simply: "Here's data, here's pattern, here's likely ou
 If outcome doesn't please — change pattern. Prediction gives feedback **before** you spend months in vain.
 
 Main rule: **be honest with yourself**. If prediction says "won't work", don't ignore. Ask "what to change?" and act.
+
 
 

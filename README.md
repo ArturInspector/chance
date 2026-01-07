@@ -1,20 +1,32 @@
 Chance
 
+Goal ≠ Desire
+Goal ≠ Meaning
+Goal = Candidate for procedural execution
+
+CORE SERVICES INSIDE:
+1. landing/ - main concept.
+2. app/:
+    1. Deliberation phase (goal compiler)
+    2. MES Procedures execution (dependency graph, Trello, Task managers integration)
+    3. Returns world result. NO BULLSHIT, real results.
+
+Frontend-Backend architecture: docs/products/architecture
+
 **System for execution.**
 Human goals are not aspirations.
 They are procedures.
-
 When a goal is decomposed into executable steps,
 the result follows.
 
 ## chance-rosy.vercel.app
 
-## Core Philosophy
-System asks **"What exactly are you doing with your hands?"**.
-We treat life procedures like Lisp programs: a composition of small, atomic operations rather than one monolithic "effort".
+## Feature-by-absence
+
+What Chance does **NOT** do, does not respond to "why live", does not say whether the goal is right, does not optimize "happiness", does not heal anxiety, does not motivate
+This system does not execute procedures for you.
 
 ## Formal System
-
 ### 1. Atomic Action (`A`)
 An action is atomic if:
 1.  It is performed in **one session** without interruptions.
