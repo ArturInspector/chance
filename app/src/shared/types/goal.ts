@@ -16,3 +16,4 @@ export type GoalValidationState =
   | { status: 'ambiguous'; missing: string[]; reasons: string[] }
   | { status: 'rejected'; reasons: string[] };
 
+
