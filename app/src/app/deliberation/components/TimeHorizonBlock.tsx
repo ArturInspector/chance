@@ -26,7 +26,7 @@ export default function TimeHorizonBlock({ value, onChange, hasError, errorMessa
       <label className="block text-lg font-semibold">Time Horizon (days)</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          How many days until this goal should be achieved? Must be realistic and greater than 0.
+          How many days until this goal should be achieved? Pick a realistic window you can plan within. Very long horizons (years) make execution plans hard to verify—consider breaking the goal into smaller pieces.
         </p>
       )}
       <input
@@ -35,7 +35,7 @@ export default function TimeHorizonBlock({ value, onChange, hasError, errorMessa
         onChange={handleChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        placeholder="Number of days"
+        placeholder="Number of days (e.g., 7, 30, 90)"
         min="1"
         max="36500"
         className={`w-full p-4 border border-gray-300 rounded-none focus:outline-2 focus:outline-black focus:outline-offset-2 ${
@@ -46,7 +46,7 @@ export default function TimeHorizonBlock({ value, onChange, hasError, errorMessa
         <p className="text-sm text-red-600">{errorMessage}</p>
       )}
       {hasError && !errorMessage && (
-        <p className="text-sm text-red-600">Time horizon is required and must be greater than 0</p>
+        <p className="text-sm text-red-600">Enter a realistic number of days (1 or more)</p>
       )}
     </div>
   );

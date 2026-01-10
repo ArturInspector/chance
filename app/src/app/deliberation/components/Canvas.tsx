@@ -33,8 +33,11 @@ export default function Canvas() {
 
   const getFieldError = (fieldName: string): string | undefined => {
     if (validationState.status === 'ambiguous' || validationState.status === 'rejected') {
-      return validationState.reasons.find((r: string) => r.startsWith(`${fieldName}:`)) ??
+      const error = validationState.reasons.find((r: string) => r.startsWith(`${fieldName}:`)) ??
         validationState.reasons.find((r: string) => r.includes(`${fieldName}.`));
+      if (error) {
+        return error.includes(':') ? error.split(':').slice(1).join(':').trim() : error;
+      }
     }
     return undefined;
   };
@@ -72,14 +75,14 @@ export default function Canvas() {
           />
 
           <VerificationBlock
-            value={goal.external_verification}
+            value={goal.external_verification ?? null}
             onChange={(value) => updateGoal({ external_verification: value })}
             hasError={hasFieldError('external_verification')}
             errorMessage={getFieldError('external_verification')}
           />
 
           <TimeHorizonBlock
-            value={goal.time_horizon_days || 0}
+            value={goal.time_horizon_days ?? 0}
             onChange={(value) => updateGoal({ time_horizon_days: value })}
             hasError={hasFieldError('time_horizon_days')}
             errorMessage={getFieldError('time_horizon_days')}

@@ -23,7 +23,7 @@ export default function VerificationBlock({ value, onChange, hasError, errorMess
       <label className="block text-lg font-semibold">External Verification</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          Who or what can verify this goal externally? If no external verification is possible, leave blank. A goal needs external verification to be objectively assessable.
+          Who or what can verify this goal independently of you? External verification makes goals objective. Examples: a code reviewer, a test suite, a customer survey, a bank statement. If truly impossible to verify externally, leave blank—but most goals can be verified.
         </p>
       )}
       <textarea
@@ -31,7 +31,7 @@ export default function VerificationBlock({ value, onChange, hasError, errorMess
         onChange={(e) => handleChange(e.target.value)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        placeholder="Who or what can verify this externally? (Leave blank if not applicable)"
+        placeholder="Example: 'Automated test suite' or 'Customer satisfaction survey' or 'Bank transaction record'. Leave blank only if no external verification is possible."
         className={`w-full min-h-[100px] p-4 border border-gray-300 rounded-none resize-none focus:outline-2 focus:outline-black focus:outline-offset-2 ${
           hasError ? 'border-red-500' : ''
         }`}

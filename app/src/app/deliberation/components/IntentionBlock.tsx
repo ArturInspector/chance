@@ -16,7 +16,7 @@ export default function IntentionBlock({ value, onChange, hasError }: IntentionB
       <label className="block text-lg font-semibold">Intention</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          Start with your initial goal or intention. Be as free-form as you like - we'll refine it together.
+          Write your initial goal or intention. Be free-form—we'll refine it step by step. A clear intention helps structure the rest of the process.
         </p>
       )}
       <textarea
@@ -30,7 +30,7 @@ export default function IntentionBlock({ value, onChange, hasError }: IntentionB
         }`}
       />
       {hasError && (
-        <p className="text-sm text-red-600">Description is required</p>
+        <p className="text-sm text-red-600">Write your intention to begin</p>
       )}
     </div>
   );

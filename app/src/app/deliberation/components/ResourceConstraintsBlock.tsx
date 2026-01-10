@@ -37,7 +37,7 @@ export default function ResourceConstraintsBlock({ value, onChange, hasError, er
       <label className="block text-lg font-semibold">Resource Constraints</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          Estimate the resources needed: time (hours), energy (scale 0-100), and attention (scale 0-100). At least one must be non-zero.
+          Budget the resources this goal requires. Time is in hours; energy and attention are subjective scales (0-100). At least one must be non-zero. This forces you to acknowledge the real cost upfront.
         </p>
       )}
       <div className="space-y-4">

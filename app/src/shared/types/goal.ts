@@ -17,3 +17,6 @@ export type GoalValidationState =
   | { status: 'rejected'; reasons: string[] };
 
 
+
+
+

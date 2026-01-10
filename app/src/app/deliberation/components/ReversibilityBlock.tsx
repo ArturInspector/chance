@@ -16,7 +16,7 @@ export default function ReversibilityBlock({ value, onChange, hasError }: Revers
       <label className="block text-lg font-semibold">Reversibility</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          If it fails or you change your mind, can you return to the previous state without lasting damage?
+          Can you undo the effects if the goal fails or you change your mind? Reversible goals let you experiment safely. Irreversible goals require more certainty upfront. Most actions have some reversibility—consider the cost to undo, not just whether it's technically possible.
         </p>
       )}
       <div className="flex gap-4">

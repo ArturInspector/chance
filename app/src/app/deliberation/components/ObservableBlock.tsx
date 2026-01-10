@@ -17,7 +17,7 @@ export default function ObservableBlock({ value, onChange, hasError, errorMessag
       <label className="block text-lg font-semibold">Observable Return</label>
       {isFocused && (
         <p className="text-sm text-gray-600 mb-2">
-          What specific, measurable change will occur in reality? Avoid vague terms like "better" or "improve". Be concrete about what you can observe.
+          What specific, measurable change will occur in reality? Avoid vague words like "better" or "improve". Include a number, percentage, threshold, or a clear yes/no test. This needs to be something you can check in the real world.
         </p>
       )}
       <textarea
@@ -25,7 +25,7 @@ export default function ObservableBlock({ value, onChange, hasError, errorMessag
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        placeholder="What changes in reality? Be specific and measurable."
+        placeholder="Example: 'User completes onboarding with 80% score' or 'Repository has 10 open issues or fewer'"
         className={`w-full min-h-[120px] p-4 border border-gray-300 rounded-none resize-none focus:outline-2 focus:outline-black focus:outline-offset-2 ${
           hasError ? 'border-red-500' : ''
         }`}
@@ -34,7 +34,7 @@ export default function ObservableBlock({ value, onChange, hasError, errorMessag
         <p className="text-sm text-red-600">{errorMessage}</p>
       )}
       {hasError && !errorMessage && (
-        <p className="text-sm text-red-600">Observable return is required and must be specific</p>
+        <p className="text-sm text-red-600">Describe the concrete observable change that will happen</p>
       )}
     </div>
   );
