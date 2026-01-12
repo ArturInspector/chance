@@ -67,10 +67,3 @@ export default function GoalInput() {
     </section>
   );
 }
-
-
-
-
-
-
-
