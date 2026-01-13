@@ -1,77 +1,73 @@
-Chance
+Chance — система исполнения целей
 
-Goal ≠ Desire
-Goal ≠ Meaning
-Goal = Candidate for procedural execution
+Минимум слов, максимум процедур. Цель — кандидат на исполнение или шум.
 
-CORE SERVICES INSIDE:
-1. landing/ - main concept.
-2. app/:
-    1. Deliberation phase (goal compiler)
-    2. MES Procedures execution (dependency graph, Trello, Task managers integration)
-    3. Returns world result. NO BULLSHIT, real results.
+## Карта процесса
+```mermaid
+graph TD
+    G[Goal] --> C{Check}
+    C -->|measurable & finite| P[Compile Procedure]
+    C -->|fail| R0[Reject / clarify]
+    P --> D[Dependency Graph]
+    D --> MES[Daily MES]
+    MES --> E[Execute Atomic Action]
+    E --> O[World Result]
+    O -->|not done| BP[Breakpoint Classification]
+    BP --> MES
+```
 
-Frontend-Backend architecture: docs/products/architecture
+## Формальные сущности
+- `A` — атомарное действие: одна сессия, бинарный результат, не требует доп. мышления.
+- `P = (A₁..Aₙ)` — процедура: входные предусловия, выходные постусловия, контракт "выполнено → достигнуто".
+- `MES` — минимальный исполнимый шаг сегодня: самое приоритетное `A` с выполненными предусловиями.
 
-**System for execution.**
-Human goals are not aspirations.
-They are procedures.
-When a goal is decomposed into executable steps,
-the result follows.
+### Инварианты
+- Цель измерима и конечна.
+- Граф зависимостей без циклов.
+- Все предусловия контролируются агентом.
+- В каждый момент существует либо `MES`, либо явно зафиксированный блокер.
 
-## chance-rosy.vercel.app
+### Следствия
+- Ежедневное выполнение `MES` → `lim(t→∞) progress(G,t) = 1`.
+- Любая пауза — указание на конкретный тип брейкпоинта.
+- Неатомарные формулировки немедленно отвергаются/декомпозируются.
 
-## Feature-by-absence
+## Диагностика отказов
+```mermaid
+flowchart LR
+    Start --> Classify{Breakpoint?}
+    Classify -->|Time| T[duration(A) > available_time]
+    Classify -->|Energy| E1[required_energy(A) > current_energy]
+    Classify -->|Clarity| C1[Action not atomic]
+    Classify -->|External| X[Waiting for uncontrollable precondition]
+    T --> FixTime[Re-scope / schedule]
+    E1 --> FixEnergy[Restore energy / swap action]
+    C1 --> Decompose[Make it atomic]
+    X --> RemoveBlocker[Change dependency or wait intentionally]
+    FixTime --> MES
+    FixEnergy --> MES
+    Decompose --> MES
+    RemoveBlocker --> MES
+```
 
-What Chance does **NOT** do, does not respond to "why live", does not say whether the goal is right, does not optimize "happiness", does not heal anxiety, does not motivate
-This system does not execute procedures for you.
+## Паразитные процедуры
+`utility_long_term(P) < 0` → память/время течёт; помечаем и устраняем в графе зависимостей.
 
-## Formal System
-### 1. Atomic Action (`A`)
-An action is atomic if:
-1.  It is performed in **one session** without interruptions.
-2.  It has a **binary outcome** (done/not done).
-3.  It requires **no further thinking** to start (e.g., "Write `def hello()`", not "Code the backend").
+## Интерфейсы системы
+- `landing/` — концепт.
+- `app/` — компилятор целей, исполнение процедур (граф зависимостей, Trello/Task менеджеры), возврат фактических результатов.
+- Архитектура: `docs/products/architecture`.
 
-### 2. The Procedure (`P`)
-A procedure is an ordered sequence `P = (A₁, A₂, ..., Aₙ)` with:
-*   **Input**: Preconditions (resources, state).
-*   **Output**: Postconditions (measurable result).
-*   **Contract**: If `Aᵢ` are executed, `G` is guaranteed.
+## Быстрые проверки перед запуском
+- Цель сформулирована метрикой и конечным состоянием.
+- Разложена на `A`; нет циклов.
+- Известен `MES` на сегодня; блокеры задокументированы.
 
-### 3. Minimal Executable Step (MES)
-The system calculates the **MES** for every day: the highest priority atomic action whose preconditions are met *right now*.
-`lim(t→∞) progress(G, t) → 1` (Progress inevitably approaches 100% if MES is executed daily).
+## Документация
+- `docs/core/math.md` — формализация.
+- `docs/core/dependency-measure.md` — метрика зависимости.
+- `docs/core/parasitic-goals.md` — детекция утечек.
+- `docs/core/axioms.md` — аксиоматика.
 
-## Debugging Life
-
-The system treats "failure" as a **Breakpoint** in the code, classified into:
-*   **Time Breakpoint**: `duration(A) > available_time`
-*   **Energy Breakpoint**: `required_energy(A) > current_energy`
-*   **Clarity Breakpoint**: Action is not atomic (vague instructions).
-*   **External Breakpoint**: Uncontrollable precondition (waiting for others).
-
-**Parasitic Procedures**:
-Loops identified by `utility_long_term(P) < 0` (e.g., doomscrolling). These are "memory leaks" in the agent's resources.
-
-## The Reachability Theorem
-We posit a theorem of procedural reachability:
-
-If:
-1.  Goal `G` is measurable and finite.
-2.  Procedure `P` is decomposed into atomic steps.
-3.  All preconditions are **controllable** by the agent.
-4.  The dependency graph is **acyclic**.
-Then:
-`∃ T: execute(P, S₀, T) ⟹ achieved(G, S_T)`
-*Executing the procedure inevitably leads to the goal.*
-## Documentation
-
-- [Mathematical Formalization](docs/core/math.md) - Core theory and formal definitions
-- [Dependency Measure](docs/core/dependency-measure.md) - How to measure goal dependencies
-- [Parasitic Goals](docs/core/parasitic-goals.md) - Identifying resource-draining procedures
-- [Axioms](docs/core/axioms.md) - Foundational principles
-
----
-*There are no gods. Only procedures?*
+*Целей нет. Есть процедуры.*
 
